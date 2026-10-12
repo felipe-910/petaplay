@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petal Play</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka+One&family=Jersey+25&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- FLOATING PETALS -->
+  <div class="petalas-container">
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+    <div class="petala"></div><div class="petala"></div><div class="petala"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="./logodefinitivo.png" alt="Petal Play" style="cursor:pointer;" onclick="openPetalDash()">
+      <h1>Petal <span>Play</span></h1>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav">
+      <a class="active" href="#inicio" onclick="closeMenu()">Início</a>
+      <a href="#sobre" onclick="closeMenu()">Sobre</a>
+      <a href="#mvv" onclick="closeMenu()">MVV</a>
+      <a href="#equipe" onclick="closeMenu()">Equipe</a>
+      <a href="#contato" onclick="closeMenu()">Contato</a>
+    </nav>
+
+    <div class="header-right">
+      
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
+        <!-- Sun icon -->
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon icon -->
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <span id="theme-label">Modo Claro</span>
+      </button>
+      <a href="#contato" class="contact-btn">Fale Conosco</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+
+        
+
+        <h2>Petal <span>Play</span></h2>
+
+        <h3>Tecnologia que transforma ideias em <span>impacto.</span></h3>
+
+        <p>Somos uma empresa de tecnologia que desenvolve soluções inovadoras através da gamificação, unindo criatividade, propósito e tecnologia para transformar experiências e melhorar vidas.</p>
+
+        <div class="hero-buttons">
+          <a href="#sobre" class="pink-btn">Conheça a Empresa</a>
+          <a href="#mvv" class="outline-btn">Nossos Valores</a>
+        </div>
+
+        
+      </div>
+
+      <!-- FLOWER -->
+      <div class="hero-image">
+        <div class="flowers">
+          <div class="flower flower--1">
+            <div class="flower__leafs flower__leafs--1">
+              <div class="flower__leaf flower__leaf--1"></div>
+              <div class="flower__leaf flower__leaf--2"></div>
+              <div class="flower__leaf flower__leaf--3"></div>
+              <div class="flower__leaf flower__leaf--4"></div>
+              <div class="flower__white-circle"></div>
+              <div class="flower__light flower__light--1"></div>
+              <div class="flower__light flower__light--2"></div>
+              <div class="flower__light flower__light--3"></div>
+              <div class="flower__light flower__light--4"></div>
+              <div class="flower__light flower__light--5"></div>
+              <div class="flower__light flower__light--6"></div>
+              <div class="flower__light flower__light--7"></div>
+              <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+              <div class="flower__line__leaf flower__line__leaf--1"></div>
+              <div class="flower__line__leaf flower__line__leaf--2"></div>
+              <div class="flower__line__leaf flower__line__leaf--3"></div>
+              <div class="flower__line__leaf flower__line__leaf--4"></div>
+              <div class="flower__line__leaf flower__line__leaf--5"></div>
+              <div class="flower__line__leaf flower__line__leaf--6"></div>
+            </div>
+          </div>
+
+          <div class="flower flower--2">
+            <div class="flower__leafs flower__leafs--2">
+              <div class="flower__leaf flower__leaf--1"></div>
+              <div class="flower__leaf flower__leaf--2"></div>
+              <div class="flower__leaf flower__leaf--3"></div>
+              <div class="flower__leaf flower__leaf--4"></div>
+              <div class="flower__white-circle"></div>
+              <div class="flower__light flower__light--1"></div>
+              <div class="flower__light flower__light--2"></div>
+              <div class="flower__light flower__light--3"></div>
+              <div class="flower__light flower__light--4"></div>
+              <div class="flower__light flower__light--5"></div>
+              <div class="flower__light flower__light--6"></div>
+              <div class="flower__light flower__light--7"></div>
+              <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+              <div class="flower__line__leaf flower__line__leaf--1"></div>
+              <div class="flower__line__leaf flower__line__leaf--2"></div>
+              <div class="flower__line__leaf flower__line__leaf--3"></div>
+              <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+          </div>
+
+          <div class="flower flower--3">
+            <div class="flower__leafs flower__leafs--3">
+              <div class="flower__leaf flower__leaf--1"></div>
+              <div class="flower__leaf flower__leaf--2"></div>
+              <div class="flower__leaf flower__leaf--3"></div>
+              <div class="flower__leaf flower__leaf--4"></div>
+              <div class="flower__white-circle"></div>
+              <div class="flower__light flower__light--1"></div>
+              <div class="flower__light flower__light--2"></div>
+              <div class="flower__light flower__light--3"></div>
+              <div class="flower__light flower__light--4"></div>
+              <div class="flower__light flower__light--5"></div>
+              <div class="flower__light flower__light--6"></div>
+              <div class="flower__light flower__light--7"></div>
+              <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+              <div class="flower__line__leaf flower__line__leaf--1"></div>
+              <div class="flower__line__leaf flower__line__leaf--2"></div>
+              <div class="flower__line__leaf flower__line__leaf--3"></div>
+              <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--2">
+            <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--3"></div></div>
+          </div>
+
+          <div class="long-g long-g--4">
+            <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Sobre a <span>Petal</span> <strong>Play</strong></h2>
+        <p>Inspirada na flor de lótus, símbolo de crescimento, harmonia e renovação, a Petal Play nasceu com o propósito de transformar desafios em oportunidades através da tecnologia e da gamificação.</p>
+        <p>Desenvolvemos soluções que simplificam o cotidiano, promovem aprendizado, bem-estar e criam experiências mais intuitivas, inclusivas e significativas.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Equipe Petal Play">
+      </div>
+    </div>
+  </section>
+
+  <!-- MVV -->
+  <section id="mvv" class="mvv-section">
+    <div class="mvv-header">
+      <h2>Missão, Visão e Valores</h2>
+      <p>Os pilares que guiam cada decisão e cada linha de código que escrevemos.</p>
+    </div>
+    <div class="mvv-container">
+      <div class="mvv-card">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="4"/>
+            <line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="4" y2="12"/>
+            <line x1="20" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Missão</h3>
+          <p>Desenvolver soluções tecnológicas inovadoras que simplifiquem o cotidiano e promovam experiências acessíveis, criativas e impactantes.</p>
+        </div>
+      </div>
+
+      <div class="mvv-card">
+        <div class="mvv-icon green">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="green-title">Visão</h3>
+          <p>Ser reconhecida como uma empresa referência em inovação, tecnologia e gamificação.</p>
+        </div>
+      </div>
+
+      <div class="mvv-card">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Valores</h3>
+          <ul>
+            <li>Inovação</li>
+            <li>Criatividade</li>
+            <li>Ética</li>
+            <li>Responsabilidade</li>
+            <li>Foco no usuário</li>
+            <li>Compromisso social</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESSO / GAMIFICAÇÃO -->
+  <section id="progresso" class="progress-section">
+    <div class="progress-header">
+      <h2>Nosso Progresso</h2>
+      <p>Cada projeto concluído é um nível conquistado. Veja nossa evolução em tempo real.</p>
+    </div>
+    <div class="progress-grid">
+      <div class="progress-card">
+        <div class="progress-icon picon-pink">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ff2d87" stroke-width="2">
+            <rect x="2" y="6" width="20" height="14" rx="2"/>
+            <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+            <circle cx="12" cy="13" r="2"/>
+          </svg>
+        </div>
+        <h4>Projetos Gamificados</h4>
+      </div>
+      <div class="progress-card">
+        <div class="progress-icon picon-green">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#7BAF2F" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h4>Impacto Social</h4>
+      </div>
+      <div class="progress-card">
+        <div class="progress-icon picon-blue">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#5b8af0" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h4>Inovação Tecnológica</h4>
+      </div>
+      <div class="progress-card">
+        <div class="progress-icon picon-orange">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ff9800" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h4>Engajamento de Usuários</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSSO MAIOR PROJETO -->
+  <section id="projeto" class="project-section">
+    <div class="project-header">
+      <h2>Nosso maior projeto</h2>
+    </div>
+    <div class="project-content">
+      <img src="personagem.png" alt="Personagem do Vale das Frutas" class="project-character">
+      <div class="speech-bubble">
+        <p>Conheça nosso maior projeto, o <strong>Vale das Frutas</strong>, um jogo nutricional educativo para crianças, para saber mais acesse nosso site:</p>
+        <a href="https://valedasfrutas.vercel.app" target="_blank" rel="noopener noreferrer">https://valedasfrutas.vercel.app</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section id="equipe" class="team-section">
+    <div class="team-header">
+      <h2>Quem faz acontecer</h2>
+      <p>Uma equipe de cinco criadores apaixonados por tecnologia, criatividade e inovação, unidos para transformar ideias em soluções que fazem a diferença.</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Letícia -->
+      <div class="member">
+        
+        <div class="member-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Letícia</h3>
+        <p>Analista, banco de dados e designer UI/UX</p>
+        <div class="line"></div>
+      </div>
+
+      <!-- Maria Fernanda -->
+      <div class="member">
+     
+        <div class="member-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Maria Fernanda</h3>
+        <p>Documentação, desenvolvimento Back-end, game design e roteirista.</p>
+        <div class="line"></div>
+      </div>
+
+      <!-- Pietra -->
+      <div class="member">
+        
+        <div class="member-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Pietra</h3>
+        <p>Analista, banco de dados, designer e audio</p>
+        <div class="line"></div>
+      </div>
+
+      <!-- Luan Fernando -->
+      <div class="member">
+        <div class="member-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Luan Fernando</h3>
+        <p>Full stack, designer, analista e banco de dados</p>
+        <div class="line"></div>
+      </div>
+
+      <!-- Felipe -->
+      <div class="member">
+        
+        <div class="member-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Felipe</h3>
+        <p>Desenvolvimento Front-end, game design, designer e audio </p>
+        <div class="line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2>Entre em <span>Contato</span></h2>
+        <p>Tem um projeto em mente? Quer saber mais sobre nossas soluções? Mande uma mensagem — adoramos novas ideias e parcerias.</p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <span>contato@petalplay.com</span>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+            <span>@petalplay.oficial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="contact-form-card">
+          <div class="form-group">
+            <label>Seu Nome</label>
+            <input type="text" placeholder="Como podemos te chamar?">
+          </div>
+          <div class="form-group">
+            <label>Seu Email</label>
+            <input type="email" placeholder="seuemail@exemplo.com">
+          </div>
+          <div class="form-group">
+            <label>Assunto</label>
+            <input type="text" placeholder="Sobre o que você quer falar?">
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea rows="4" placeholder="Conte-nos mais sobre seu projeto ou dúvida..."></textarea>
+          </div>
+          <button class="contact-submit">
+            <span>Enviar Mensagem</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wave"></div>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="PetalPlay.jpg" alt="Petal Play">
+        <h2>Petal <span>Play</span></h2>
+      </div>
+      <div class="footer-column">
+        <h4>Petal Play LTDA.</h4>
+        <p>Empresa de tecnologia voltada ao desenvolvimento de soluções gamificadas.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Links</h4>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#mvv">MVV</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-column">
+        <h4>Contato</h4>
+        <p>contato@petalplay.com</p>
+        <p>@petalplay.oficial</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Petal Play. Todos os direitos reservados.</div>
+  </footer>
+
+  
+
+  <!-- PETAL DASH EASTER EGG -->
+  <div id="pd-overlay" style="display:none;position:fixed;inset:0;z-index:99999;background:#0a0a1a;flex-direction:column;align-items:center;justify-content:flex-start;">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      #pd-overlay{font-family:'Press Start 2P',monospace;}
+      #pd-header{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:520px;padding:10px 16px;}
+      .pd-stat{color:#ff2d87;font-size:8px;text-shadow:0 0 6px #ff2d87;}
+      .pd-stat span{color:#fff;}
+      #pd-canvas{border:3px solid #ff2d87;image-rendering:pixelated;display:block;touch-action:none;max-width:100%;}
+      #pd-msg{font-size:9px;color:#fff;text-align:center;padding:8px 16px;min-height:22px;text-shadow:0 0 8px #ff2d87;}
+      #pd-close{background:none;border:1px solid rgba(255,45,135,0.4);color:rgba(255,45,135,0.7);font-family:'Press Start 2P',monospace;font-size:7px;padding:6px 12px;cursor:pointer;border-radius:6px;margin-top:4px;}
+      #pd-close:hover{border-color:#ff2d87;color:#ff2d87;}
+    </style>
+    <div id="pd-header">
+      <div class="pd-stat">SCORE <span id="pd-score">0</span></div>
+      <div class="pd-stat">HI <span id="pd-hi">0</span></div>
+      <div class="pd-stat">LIVES <span id="pd-lives">♥♥♥</span></div>
+    </div>
+    <canvas id="pd-canvas"></canvas>
+    <div id="pd-msg">SPACE ou toque para começar</div>
+    <button id="pd-close" onclick="closePetalDash()">✕ FECHAR</button>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('theme-label').textContent = isDark ? 'Modo Escuro' : 'Modo Claro';
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      const btn = document.querySelector('.menu-toggle');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('main-nav').classList.remove('open');
+      document.querySelector('.menu-toggle').classList.remove('active');
+    }
+
+    /* ========== PETAL DASH ========== */
+    let pdActive=false, pdRaf=null;
+    const PDC={};
+
+    function openPetalDash(){
+      document.getElementById('pd-overlay').style.display='flex';
+      pdActive=true;
+      initPetalDash();
+    }
+    function closePetalDash(){
+      document.getElementById('pd-overlay').style.display='none';
+      pdActive=false;
+      if(pdRaf){cancelAnimationFrame(pdRaf);pdRaf=null;}
+    }
+
+    function initPetalDash(){
+      const overlay=document.getElementById('pd-overlay');
+      const C=document.getElementById('pd-canvas');
+
+      // Responsive canvas size
+      const maxW=Math.min(window.innerWidth-8, 520);
+      const W=maxW, H=Math.round(maxW*(380/480));
+      C.width=W; C.height=H;
+      const sc=W/480; // scale factor
+
+      const X=C.getContext('2d');
+      X.imageSmoothingEnabled=false;
+
+      let state='idle',score=0,hiScore=parseInt(localStorage.getItem('pdHi')||'0'),lives=3,frame=0;
+      let gameSpeed=2.2,spawnTimer=0,spawnRate=55,invincible=0;
+
+      document.getElementById('pd-hi').textContent=hiScore;
+
+      const PINK='#ff2d87',PINK2='#ff7ab8';
+
+      function makeEmojiSprite(emoji,size){
+        const oc=document.createElement('canvas');
+        oc.width=size;oc.height=size;
+        const ox=oc.getContext('2d');
+        ox.font=`${Math.round(size*0.82)}px serif`;
+        ox.textAlign='center';ox.textBaseline='middle';
+        ox.fillText(emoji,size/2,size/2);
+        return oc;
+      }
+      const SPR_SIZE=Math.max(24,Math.round(36*sc));
+      const sprPetal=makeEmojiSprite('🌸',SPR_SIZE);
+      const sprThorn=makeEmojiSprite('🌵',SPR_SIZE);
+      const sprRain =makeEmojiSprite('💧',SPR_SIZE);
+      const sprBug  =makeEmojiSprite('🐛',SPR_SIZE);
+
+      // keep old arrays for fallback tile drawing — replaced below
+      const PETAL_PIX=[
+        [0,0,0,1,1,1,1,0,0,0],
+        [0,0,1,2,2,2,2,1,0,0],
+        [0,1,2,2,3,3,2,2,1,0],
+        [1,2,2,3,3,3,3,2,2,1],
+        [1,2,3,3,3,3,3,3,2,1],
+        [1,2,3,3,3,3,3,3,2,1],
+        [1,2,2,3,3,3,3,2,2,1],
+        [0,1,2,2,3,3,2,2,1,0],
+        [0,0,1,2,2,2,2,1,0,0],
+        [0,0,0,1,1,1,1,0,0,0],
+      ];
+      const PC={0:null,1:'#ff2d87',2:'#ff7ab8',3:'#ffb3d4'};
+
+      const THORN=[
+        [0,0,0,1,1,0,0,0],[0,0,1,2,2,1,0,0],[0,0,1,2,2,1,0,0],
+        [0,1,2,2,2,2,1,0],[0,1,2,1,1,2,1,0],[1,2,2,1,1,2,2,1],
+        [1,2,2,2,2,2,2,1],[1,2,2,2,2,2,2,1],[1,2,2,2,2,2,2,1],
+        [0,1,2,2,2,2,1,0],[0,1,2,2,2,2,1,0],[0,0,1,2,2,1,0,0],
+        [0,0,1,2,2,1,0,0],[0,0,0,1,1,0,0,0],
+      ];
+      const TC={0:null,1:'#1a5c1a',2:'#2ecc2e',3:'#7fff7f'};
+
+      const RAIN=[
+        [0,0,1,1,0,0],[0,1,2,2,1,0],[1,2,3,3,2,1],[1,2,3,3,2,1],
+        [1,2,3,3,2,1],[1,2,3,3,2,1],[1,2,3,3,2,1],[1,2,2,2,2,1],
+        [0,1,2,2,1,0],[0,0,1,1,0,0],
+      ];
+      const RC={0:null,1:'#1a6ba8',2:'#3498db',3:'#85c4f0'};
+
+      const BUG=[
+        [0,1,0,0,0,0,0,0,1,0],[0,0,1,1,0,0,1,1,0,0],
+        [1,1,2,2,3,3,2,2,1,1],[1,2,3,3,3,3,3,3,2,1],
+        [1,2,3,1,3,3,1,3,2,1],[1,2,3,3,3,3,3,3,2,1],
+        [0,1,2,2,2,2,2,2,1,0],[0,0,1,0,0,0,0,1,0,0],
+      ];
+      const BUC={0:null,1:'#4a0000',2:'#8b0000',3:'#cc2222'};
+
+      function drawSprite(sprite,pal,px,py,pxSc){
+        for(let r=0;r<sprite.length;r++)
+          for(let c=0;c<sprite[r].length;c++){
+            const k=sprite[r][c];
+            if(pal[k]){X.fillStyle=pal[k];X.fillRect(px+c*pxSc,py+r*pxSc,pxSc,pxSc);}
+          }
+      }
+      function drawImg(img,px,py,w,h){X.drawImage(img,px,py,w,h);}
+
+      const stars=Array.from({length:60},()=>({x:Math.random()*W,y:Math.random()*H*0.75,s:Math.random()<0.3?2:1,b:Math.random()}));
+      const windLines=Array.from({length:8},()=>({x:Math.random()*W,y:Math.random()*H*0.8,len:(Math.random()*30+15)*sc,speed:(Math.random()*2+2)*sc,alpha:Math.random()*0.4+0.1}));
+
+      let player={x:80*sc,y:H*0.45,vy:0,ay:0.28*sc,w:20*sc,h:20*sc,bobTimer:0};
+      let obstacles=[],particles=[],flapCooldown=0,isFlapping=false;
+      const PX_SC=Math.max(1,Math.round(2*sc));
+
+      function flap(){
+        if(state==='idle'){startGame();return;}
+        if(state==='gameover'){startGame();return;}
+        player.vy=-(4.2*sc);
+        isFlapping=true;flapCooldown=8;
+        spawnParticle(player.x+player.w/2,player.y+player.h/2,'trail');
+      }
+
+      function spawnParticle(x,y,type){
+        for(let i=0;i<(type==='trail'?4:8);i++)
+          particles.push({x,y,vx:(Math.random()-0.5)*3*sc*(type==='death'?4:1.5),vy:(Math.random()-1.5)*sc*(type==='death'?4:2),life:1,decay:0.04+Math.random()*0.03,col:type==='death'?PINK:PINK2,size:PX_SC*(type==='death'?2:1)});
+      }
+
+      function spawnObstacle(){
+        const t=['thorn','rain','bug'][Math.floor(Math.random()*3)];
+        let img,w2,h2,spd,wAmp,wSpd;
+        if(t==='thorn'){img=sprThorn;w2=SPR_SIZE*0.9;h2=SPR_SIZE*1.1;spd=gameSpeed*sc;wAmp=0.4*sc;wSpd=0.03;}
+        else if(t==='rain'){img=sprRain;w2=SPR_SIZE*0.75;h2=SPR_SIZE*1.0;spd=gameSpeed*sc*1.3;wAmp=0.4*sc;wSpd=0.03;}
+        else{img=sprBug;w2=SPR_SIZE*1.1;h2=SPR_SIZE*0.9;spd=gameSpeed*sc*0.9;wAmp=1.5*sc;wSpd=0.08;}
+        const y=Math.random()*(H*0.65-h2)+H*0.05;
+        obstacles.push({x:W+10,y,w:w2,h:h2,img,spd,type:t,wobble:Math.random()*Math.PI*2,wAmp,wSpd});
+      }
+
+      function startGame(){
+        state='playing';
+        document.getElementById('pd-msg').textContent='';
+        gameSpeed=2.2;spawnTimer=0;spawnRate=55;
+        player.y=H*0.45;player.vy=0;
+        obstacles=[];particles=[];score=0;lives=3;invincible=0;frame=0;
+        updateUI();
+        if(pdRaf)cancelAnimationFrame(pdRaf);
+        pdRaf=requestAnimationFrame(loop);
+      }
+
+      function updateUI(){
+        document.getElementById('pd-score').textContent=score;
+        document.getElementById('pd-lives').textContent='♥'.repeat(Math.max(0,lives));
+      }
+
+      function overlap(ax,ay,aw,ah,bx,by,bw,bh){return ax<bx+bw&&ax+aw>bx&&ay<by+bh&&ay+ah>by;}
+
+      function loop(){
+        if(!pdActive||state==='idle'||state==='gameover'){draw();return;}
+        frame++;
+        // Physics
+        player.vy+=player.ay;
+        player.y+=player.vy;
+        player.bobTimer+=0.08;
+        if(flapCooldown>0)flapCooldown--;else isFlapping=false;
+        if(player.y<0){player.y=0;player.vy=0;}
+        if(player.y>H-player.h-8){player.y=H-player.h-8;player.vy=0;}
+        // Spawn
+        spawnTimer++;
+        if(spawnTimer>=spawnRate){spawnTimer=0;spawnObstacle();spawnRate=Math.max(28,spawnRate-0.4);gameSpeed=Math.min(6,gameSpeed+0.04);}
+        // Obstacles
+        for(let i=obstacles.length-1;i>=0;i--){
+          const o=obstacles[i];
+          o.x-=o.spd;
+          o.wobble+=o.wSpd;
+          if(o.type==='bug')o.y+=Math.sin(o.wobble)*o.wAmp;
+          if(o.x+o.w<-10){obstacles.splice(i,1);score++;if(frame%30===0)updateUI();continue;}
+          if(invincible<=0&&overlap(player.x+player.w*0.15,player.y+player.h*0.15,player.w*0.7,player.h*0.7,o.x,o.y,o.w,o.h)){
+            lives--;updateUI();invincible=90;spawnParticle(player.x+player.w/2,player.y+player.h/2,'hit');obstacles.splice(i,1);
+            if(lives<=0){cancelAnimationFrame(pdRaf);state='gameover';
+              if(score>hiScore){hiScore=score;localStorage.setItem('pdHi',hiScore);document.getElementById('pd-hi').textContent=hiScore;}
+              document.getElementById('pd-msg').textContent='GAME OVER! Toque para jogar de novo';
+              draw();return;
+            }
+          }
+        }
+        if(invincible>0)invincible--;
+        // Particles
+        for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.1*sc;p.life-=p.decay;if(p.life<=0)particles.splice(i,1);}
+        // Wind
+        for(const wl of windLines){wl.x-=wl.speed*(gameSpeed/2.2);if(wl.x+wl.len<0)wl.x=W+Math.random()*80;}
+        if(frame%30===0){score++;updateUI();}
+        draw();
+        pdRaf=requestAnimationFrame(loop);
+      }
+
+      function draw(){
+        X.fillStyle='#0a0a1a';X.fillRect(0,0,W,H);
+        // Stars
+        for(const s of stars){X.fillStyle=`rgba(255,255,255,${0.3+0.5*Math.sin(frame*0.04+s.b*10)})`;X.fillRect(Math.floor(s.x),Math.floor(s.y),s.s,s.s);}
+        // Horizon glow
+        const grd=X.createLinearGradient(0,H*0.55,0,H);
+        grd.addColorStop(0,'rgba(255,45,135,0.12)');grd.addColorStop(1,'rgba(10,5,25,0.95)');
+        X.fillStyle=grd;X.fillRect(0,H*0.55,W,H);
+        // Ground
+        for(let gx=0;gx<W;gx+=4){X.fillStyle=Math.floor(gx/4)%2===0?'#2a0e36':'#1a0826';X.fillRect(gx,H-8,4,8);}
+        // Wind lines
+        for(const wl of windLines){X.strokeStyle=`rgba(255,180,220,${wl.alpha})`;X.lineWidth=1;X.beginPath();X.moveTo(Math.floor(wl.x),Math.floor(wl.y));X.lineTo(Math.floor(wl.x+wl.len),Math.floor(wl.y));X.stroke();}
+        // Obstacles
+        for(const o of obstacles)drawImg(o.img,Math.floor(o.x),Math.floor(o.y),o.w,o.h);
+        // Player
+        if(invincible<=0||Math.floor(frame/5)%2===0){
+          const bobOff=state==='playing'?Math.sin(player.bobTimer)*1.5:0;
+          const px=Math.floor(player.x),py=Math.floor(player.y+bobOff);
+          X.save();
+          if(player.vy>1*sc){X.translate(px+player.w/2,py+player.h/2);X.rotate(0.25);X.drawImage(sprPetal,-player.w/2,-player.h/2,player.w,player.h);}
+          else if(player.vy<-1*sc){X.translate(px+player.w/2,py+player.h/2);X.rotate(-0.2);X.drawImage(sprPetal,-player.w/2,-player.h/2,player.w,player.h);}
+          else{X.drawImage(sprPetal,px,py,player.w,player.h);}
+          X.restore();
+        }
+        // Particles
+        X.save();
+        for(const p of particles){X.fillStyle=p.col;X.globalAlpha=p.life;X.fillRect(Math.floor(p.x),Math.floor(p.y),p.size,p.size);}
+        X.restore();
+        // Overlays
+        if(state==='idle'){
+          X.fillStyle='rgba(10,5,26,0.65)';X.fillRect(0,0,W,H);
+          X.fillStyle=PINK;X.font=`bold ${Math.round(16*sc)}px "Press Start 2P"`;X.textAlign='center';
+          X.fillText('PETAL DASH',W/2,H/2-30*sc);
+          X.fillStyle='rgba(255,180,220,0.7)';X.font=`${Math.round(7*sc)}px "Press Start 2P"`;
+          X.fillText('desvia de espinhos · gotas · insetos',W/2,H/2-8*sc);
+          drawImg(sprPetal,Math.floor(W/2-player.w/2),Math.floor(H/2+10*sc),player.w,player.h);
+        }
+        if(state==='gameover'){
+          X.fillStyle='rgba(10,5,26,0.78)';X.fillRect(0,0,W,H);
+          X.fillStyle=PINK;X.font=`bold ${Math.round(13*sc)}px "Press Start 2P"`;X.textAlign='center';
+          X.fillText('GAME OVER',W/2,H/2-15*sc);
+          X.fillStyle='#fff';X.font=`${Math.round(9*sc)}px "Press Start 2P"`;
+          X.fillText('SCORE: '+score,W/2,H/2+8*sc);
+          X.fillStyle='rgba(255,180,220,0.6)';
+          X.fillText('BEST: '+hiScore,W/2,H/2+24*sc);
+        }
+      }
+
+      // Input
+      const oldKey=window._pdKey;
+      if(oldKey)document.removeEventListener('keydown',oldKey);
+      window._pdKey=function(e){if(e.code==='Space'&&pdActive){e.preventDefault();flap();}};
+      document.addEventListener('keydown',window._pdKey);
+      C.ontouchstart=function(e){e.preventDefault();flap();};
+      C.onclick=flap;
+
+      draw();
+    }
+
+    window.addEventListener('resize',()=>{
+      if(pdActive)initPetalDash();
+    });
+  </script>
+
+</body>
+</html>
