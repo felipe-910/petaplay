@@ -1486,6 +1486,78 @@ footer {
 }
 
 /* ========================= */
+/* BALÃO DA ALICE - ESTILO (a posição continua a mesma) */
+/* ========================= */
+.speech-bubble {
+  border-width: 3px;
+  border-radius: 28px;
+  box-shadow: none;
+  filter: drop-shadow(0 6px 0 rgba(255,45,135,.35)) drop-shadow(0 18px 26px var(--shadow-pink));
+}
+/* o rabinho antigo dá lugar a um rabinho desenhado, com o contorno contínuo */
+.speech-bubble::before, .speech-bubble::after { content: none; }
+.balao-ponta {
+  position: absolute; left: -51px; top: 15px;
+  width: 54px; height: 50px;
+  overflow: visible; pointer-events: none;
+  transform-origin: 49.5px 29px;
+}
+.balao-ponta-fundo { fill: #fff; }
+.balao-ponta-contorno {
+  fill: none; stroke: var(--pink); stroke-width: 3;
+  stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* etiqueta com o nome, como nos diálogos do jogo */
+.speech-bubble .balao-nome {
+  position: absolute; top: -19px; left: 26px;
+  font-family: 'Fredoka One', 'Poppins', sans-serif; font-size: 1rem; letter-spacing: .5px;
+  color: #fff !important;
+  background: linear-gradient(45deg, var(--pink), var(--pink-light));
+  border: 3px solid #fff; border-radius: 999px;
+  padding: 3px 16px 4px;
+  box-shadow: 0 4px 10px rgba(255,45,135,.3);
+}
+
+.speech-bubble p { margin-bottom: 16px; }
+.speech-bubble strong { font-weight: 700; }
+
+/* link como botão */
+.speech-bubble a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 16px 9px 18px;
+  border-radius: 999px;
+  background: var(--green-soft);
+  border: 2px solid #cfe4a9;
+  color: #3f6a10 !important;
+  font-size: .9375rem;
+  text-decoration: none;
+  word-break: normal; overflow-wrap: anywhere;
+  transition: background .2s, border-color .2s, color .2s, transform .2s;
+}
+.speech-bubble a:hover, .speech-bubble a:focus-visible {
+  background: var(--pink); border-color: var(--pink);
+  color: #fff !important; transform: translateY(-2px);
+}
+.speech-bubble a:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.balao-link-icone { flex: none; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 700px) {
+  /* no celular o rabinho aponta para baixo, para a Alice */
+  .balao-ponta { left: calc(50% - 49.5px); top: calc(100% - 27.5px); transform: rotate(-90deg) scale(.55); }
+  .speech-bubble .balao-nome { left: 22px; }
+}
+
+/* alto contraste: balão preto com texto branco, contorno branco */
+:root[data-contraste="alto"] .speech-bubble { border-width: 3px !important; filter: none; }
+:root[data-contraste="alto"] .speech-bubble, :root[data-contraste="alto"] .speech-bubble p { color: #fff !important; }
+:root[data-contraste="alto"] .balao-ponta-fundo { fill: #000; }
+:root[data-contraste="alto"] .balao-ponta-contorno { stroke: #fff; }
+:root[data-contraste="alto"] .speech-bubble .balao-nome { background: #FFE14D; color: #000 !important; border-color: #fff; box-shadow: none; }
+:root[data-contraste="alto"] .speech-bubble a { background: #FFE14D; border-color: #FFE14D; color: #000 !important; }
+
+/* ========================= */
 /* EQUIPE - RETRATOS ILUSTRADOS */
 /* ========================= */
 .member-foto {
