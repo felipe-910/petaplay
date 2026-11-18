@@ -1758,3 +1758,46 @@ main section[id]:not(#inicio) { scroll-margin-top: 90px; }
   /* aqui o cabeçalho tem 60 px */
   main section[id]:not(#inicio) { scroll-margin-top: 60px; }
 }
+
+/* ========================= */
+/* CONTATO RESPONSIVO */
+/* ========================= */
+.contact-right { min-width: 0; }
+.form-group input, .form-group textarea { width: 100%; }
+.contact-info-item a { color: inherit; text-decoration: none; overflow-wrap: anywhere; }
+.contact-info-item a:hover { color: var(--pink); }
+@media (min-width: 1250px) {
+  /* nome e e-mail lado a lado no computador */
+  .contact-form-card { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+  .contact-form-card .form-group:nth-child(n+3), .contact-submit { grid-column: 1 / -1; }
+  .contact-submit { justify-self: start; }
+}
+@media (max-width: 900px) {
+  /* texto em cima e formulário embaixo, ocupando a largura toda */
+  .contact-inner { flex-direction: column; align-items: stretch; gap: 40px; }
+  .contact-left { max-width: none; }
+  .contact-right { width: 100%; }
+}
+@media (max-width: 480px) {
+  .contact-section { padding: 70px 5%; }
+  .contact-form-card { padding: 24px 18px; border-radius: 20px; }
+  .form-group input, .form-group textarea { font-size: 1rem; } /* 16 px: o iPhone não dá zoom ao tocar no campo */
+  .contact-submit { align-self: stretch; }
+}
+
+/* ========================= */
+/* EQUIPE: OS 5 NA MESMA LINHA NO COMPUTADOR */
+/* ========================= */
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.team-grid .member { flex: 0 1 calc((100% - 4 * 24px) / 5); min-width: 0; padding: 36px 18px 28px; }
+@media (max-width: 1199px) {
+  /* 3 em cima e 2 embaixo, centralizados */
+  .team-grid .member { flex-basis: calc((100% - 2 * 24px) / 3); }
+}
+@media (max-width: 700px) {
+  .team-grid { gap: 16px; }
+  .team-grid .member { flex-basis: calc((100% - 16px) / 2); }
+}
+@media (max-width: 480px) {
+  .team-grid .member { flex-basis: 100%; }
+}
