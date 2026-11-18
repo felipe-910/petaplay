@@ -34,7 +34,7 @@
       <h1>Petal<span>Play</span></h1>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
 
@@ -517,16 +517,24 @@
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
       document.getElementById('theme-label').textContent = isDark ? 'Modo Escuro' : 'Modo Claro';
     }
-    function toggleMenu() {
+    // Menu do celular: abre como uma cortina embaixo do cabeçalho
+    function setMenu(aberto) {
       const nav = document.getElementById('main-nav');
       const btn = document.querySelector('.menu-toggle');
-      nav.classList.toggle('open');
-      btn.classList.toggle('active');
+      nav.classList.toggle('open', aberto);
+      btn.classList.toggle('active', aberto);
+      btn.setAttribute('aria-expanded', String(aberto));
+      btn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
     }
-    function closeMenu() {
-      document.getElementById('main-nav').classList.remove('open');
-      document.querySelector('.menu-toggle').classList.remove('active');
-    }
+    function toggleMenu() { setMenu(!document.getElementById('main-nav').classList.contains('open')); }
+    function closeMenu() { setMenu(false); }
+    // fecha ao tocar fora do cabeçalho ou apertar Esc
+    document.addEventListener('click', function (e) {
+      if (document.getElementById('main-nav').classList.contains('open') && !e.target.closest('header')) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.getElementById('main-nav').classList.contains('open')) closeMenu();
+    });
 
     /* ========== PETAL DASH ========== */
     let pdActive=false, pdRaf=null;

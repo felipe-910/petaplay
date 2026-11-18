@@ -1651,8 +1651,9 @@ main:focus { outline: none; }
 /* ========================= */
 /* INDICADOR DE PÁGINA */
 /* ========================= */
-.progresso-pagina { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; pointer-events: none; }
-.progresso-pagina span { display: block; height: 100%; background: linear-gradient(90deg, var(--pink), var(--green-light)); transform-origin: left center; transform: scaleX(0); }
+/* linha rosa no pé do cabeçalho: cresce conforme a página é rolada */
+.progresso-pagina { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; pointer-events: none; }
+.progresso-pagina span { display: block; height: 100%; background: var(--pink); box-shadow: 0 0 12px rgba(255,45,135,.75); border-radius: 0 3px 3px 0; transform-origin: left center; transform: scaleX(0); }
 nav { gap: 28px; }
 nav a { white-space: nowrap; }
 
@@ -1687,4 +1688,73 @@ nav a { white-space: nowrap; }
   header { padding: 0 4%; }
   .logo img { width: 64px; }
   .logo h1 { font-size: 1.7rem; }
+}
+
+/* ========================= */
+/* LINKS DO MENU CAEM NO LUGAR CERTO */
+/* ========================= */
+/* o cabeçalho fixo (90 px) cobria o começo da seção */
+main section[id]:not(#inicio) { scroll-margin-top: 90px; }
+
+/* ========================= */
+/* MENU DO CELULAR (CORTINA) */
+/* ========================= */
+.menu-toggle { width: 44px; height: 44px; padding: 9px; align-items: center; }
+.menu-toggle span { width: 26px; height: 2px; }
+.menu-toggle:hover, .menu-toggle.active { background: transparent; }
+.menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 1000px) {
+  /* o cabeçalho fica preso no topo, para a linha rosa aparecer enquanto rola */
+  header { position: sticky; top: 0; }
+  main section[id]:not(#inicio) { scroll-margin-top: 70px; }
+
+  nav {
+    display: flex;
+    position: absolute; top: 100%; left: 0; right: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 6px 6% 22px;
+    background: var(--bg);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-top: none;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 30px 60px rgba(0,0,0,.35);
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    transition: clip-path .45s cubic-bezier(.7,0,.2,1), visibility 0s .45s;
+  }
+  nav.open {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+    transition: clip-path .45s cubic-bezier(.7,0,.2,1);
+  }
+  nav a {
+    display: block;
+    padding: 16px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    background: none;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateX(-18px);
+    transition: opacity .3s ease, transform .3s ease, color .2s;
+  }
+  nav.open a { opacity: 1; transform: none; }
+  /* os links entram um depois do outro */
+  nav.open a:nth-child(1) { transition-delay: .08s; }
+  nav.open a:nth-child(2) { transition-delay: .13s; }
+  nav.open a:nth-child(3) { transition-delay: .18s; }
+  nav.open a:nth-child(4) { transition-delay: .23s; }
+  nav.open a:nth-child(5) { transition-delay: .28s; }
+  nav.open a:nth-child(6) { transition-delay: .33s; }
+  nav a.active { background: none; color: var(--pink); }
+  nav a.active::after { display: block; left: 0; right: 0; width: auto; bottom: -1px; height: 2px; border-radius: 2px; }
+}
+@media (max-width: 480px) {
+  /* aqui o cabeçalho tem 60 px */
+  main section[id]:not(#inicio) { scroll-margin-top: 60px; }
 }
