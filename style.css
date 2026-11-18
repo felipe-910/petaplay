@@ -1673,8 +1673,8 @@ nav a { white-space: nowrap; }
   .about-text p, .mvv-header p, .progress-header p, .team-header p, .contact-left > p { font-size: 1.04rem; }
 }
 
-/* logo do rodapé em PNG (sem fundo branco) */
-.footer-logo img { width: 84px; border-radius: 0; }
+/* rodapé com o mesmo ícone do cabeçalho (logodefinitivo.png recortado, sem a sobra transparente) */
+.footer-logo img { width: 80px; border-radius: 0; }
 .footer-column { max-width: 300px; }
 
 /* com o item "Conheça nosso projeto", o menu aperta em telas médias */
