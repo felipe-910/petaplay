@@ -1647,3 +1647,44 @@ main:focus { outline: none; }
   .a11y-abrir { width: 52px; height: 52px; }
   .a11y-painel { width: calc(100vw - 80px); }
 }
+
+/* ========================= */
+/* INDICADOR DE PÁGINA */
+/* ========================= */
+.progresso-pagina { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; pointer-events: none; }
+.progresso-pagina span { display: block; height: 100%; background: linear-gradient(90deg, var(--pink), var(--green-light)); transform-origin: left center; transform: scaleX(0); }
+nav { gap: 28px; }
+nav a { white-space: nowrap; }
+
+/* ========================= */
+/* PARÁGRAFOS MAIORES */
+/* ========================= */
+.hero-text > p { font-size: 1.15rem; }
+.about-text p { font-size: 1.12rem; }
+.mvv-header p, .progress-header p, .team-header p { font-size: 1.1rem; max-width: 560px; }
+.mvv-card p, .mvv-card li { font-size: 1.02rem; }
+.member p { font-size: .95rem; }
+.contact-left > p { font-size: 1.1rem; }
+.footer-column p, .footer-column a { font-size: .97rem; }
+.speech-bubble p { font-size: 1.15rem; }
+@media (max-width: 700px) {
+  .hero-text > p { font-size: 1.05rem; }
+  .about-text p, .mvv-header p, .progress-header p, .team-header p, .contact-left > p { font-size: 1.04rem; }
+}
+
+/* logo do rodapé em PNG (sem fundo branco) */
+.footer-logo img { width: 84px; border-radius: 0; }
+.footer-column { max-width: 300px; }
+
+/* com o item "Conheça nosso projeto", o menu aperta em telas médias */
+@media (min-width: 1001px) and (max-width: 1300px) {
+  nav { gap: 18px; }
+  nav a { font-size: .82rem; }
+  #theme-label { display: none; }
+  .theme-toggle { padding: 8px 10px; }
+}
+@media (min-width: 1001px) and (max-width: 1120px) {
+  header { padding: 0 4%; }
+  .logo img { width: 64px; }
+  .logo h1 { font-size: 1.7rem; }
+}

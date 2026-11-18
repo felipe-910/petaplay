@@ -42,6 +42,7 @@
       <a class="active" href="#inicio" onclick="closeMenu()">Início</a>
       <a href="#sobre" onclick="closeMenu()">Sobre</a>
       <a href="#mvv" onclick="closeMenu()">MVV</a>
+      <a href="#projeto" onclick="closeMenu()">Conheça nosso projeto</a>
       <a href="#equipe" onclick="closeMenu()">Equipe</a>
       <a href="#contato" onclick="closeMenu()">Contato</a>
     </nav>
@@ -69,6 +70,8 @@
       </button>
       <a href="#contato" class="contact-btn">Fale Conosco</a>
     </div>
+    <!-- indicador de página: quanto da página já foi rolado -->
+    <div class="progresso-pagina" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="conteudo" tabindex="-1">
@@ -195,8 +198,7 @@
     <div class="about-content">
       <div class="about-text">
         <h2>Sobre a <span>Petal</span><strong>Play</strong></h2>
-        <p>Inspirada na flor de lótus, símbolo de crescimento, harmonia e renovação, a Petal Play nasceu com o propósito de transformar desafios em oportunidades através da tecnologia e da gamificação.</p>
-        <p>Desenvolvemos soluções que simplificam o cotidiano, promovem aprendizado, bem-estar e criam experiências mais intuitivas, inclusivas e significativas.</p>
+        <p>Desenvolvemos soluções tecnológicas que unem educação e gamificação para transformar o aprendizado em experiências interativas, criativas e envolventes. Por meio de recursos lúdicos e inovadores, buscamos tornar o conhecimento mais acessível, estimular a criatividade e proporcionar novas formas de aprender e explorar o mundo.</p>
       </div>
       <div class="about-image">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Equipe Petal Play">
@@ -224,7 +226,7 @@
         </div>
         <div>
           <h3>Missão</h3>
-          <p>Desenvolver soluções tecnológicas inovadoras que simplifiquem o cotidiano e promovam experiências acessíveis, criativas e impactantes.</p>
+          <p>Unir tecnologia, educação e gamificação para criar experiências de aprendizado criativas e interativas.</p>
         </div>
       </div>
 
@@ -237,7 +239,7 @@
         </div>
         <div>
           <h3 class="green-title">Visão</h3>
-          <p>Ser reconhecida como uma empresa referência em inovação, tecnologia e gamificação.</p>
+          <p>Ser referência em soluções gamificadas que transformam a maneira de aprender.</p>
         </div>
       </div>
 
@@ -250,12 +252,11 @@
         <div>
           <h3>Valores</h3>
           <ul>
-            <li>Inovação</li>
             <li>Criatividade</li>
-            <li>Ética</li>
-            <li>Responsabilidade</li>
-            <li>Foco no usuário</li>
-            <li>Compromisso social</li>
+            <li>Inovação</li>
+            <li>Compromisso</li>
+            <li>Integridade</li>
+            <li>Colaboração</li>
           </ul>
         </div>
       </div>
@@ -459,11 +460,11 @@
     <div class="footer-wave"></div>
     <div class="footer-content">
       <div class="footer-logo">
-        <img src="PetalPlay.jpg" alt="Petal Play">
-        <h2>Petal <span>Play</span></h2>
+        <img src="PetalPlay.png" alt="PetalPlay">
+        <h2>Petal<span>Play</span></h2>
       </div>
       <div class="footer-column">
-        <h4>Petal Play LTDA.</h4>
+        <h4>PetalPlay LTDA.</h4>
         <p>Empresa de tecnologia voltada ao desenvolvimento de soluções gamificadas.</p>
       </div>
       <div class="footer-column">
@@ -471,6 +472,7 @@
         <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
         <a href="#mvv">MVV</a>
+        <a href="#projeto">Nosso projeto</a>
         <a href="#equipe">Equipe</a>
         <a href="#contato">Contato</a>
       </div>
@@ -773,6 +775,30 @@
     window.addEventListener('resize',()=>{
       if(pdActive)initPetalDash();
     });
+  </script>
+
+  <script>
+    /* Indicador de página: a barra no cabeçalho mostra quanto da página já foi rolado,
+       e o item do menu da seção que está na tela fica destacado */
+    (function(){
+      var barra = document.querySelector('.progresso-pagina span');
+      var links = [].slice.call(document.querySelectorAll('#main-nav a'));
+      var secoes = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+      function atualizar(){
+        var total = document.documentElement.scrollHeight - window.innerHeight;
+        if (barra) barra.style.transform = 'scaleX(' + (total > 0 ? Math.min(1, window.scrollY / total) : 0) + ')';
+        var linha = window.scrollY + 140, atual = 0;
+        secoes.forEach(function(s, i){ if (s && s.getBoundingClientRect().top + window.scrollY <= linha) atual = i; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) atual = secoes.length - 1;
+        links.forEach(function(a, i){
+          a.classList.toggle('active', i === atual);
+          if (i === atual) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+      window.addEventListener('scroll', atualizar, { passive: true });
+      window.addEventListener('resize', atualizar);
+      atualizar();
+    })();
   </script>
 
   <!-- ACESSIBILIDADE: menu próprio + VLibras (Libras) -->
