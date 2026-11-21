@@ -1806,3 +1806,38 @@ nav a { font-size: .95rem; }
   .member h3 { font-size: 1.15rem; }
   .member p { font-size: 1.08rem; min-height: 0; }
 }
+
+/* ========================= */
+/* TOPO SEM ESPAÇO SOBRANDO EMBAIXO DO MENU */
+/* ========================= */
+/* computador: o menu é fixo e tem 90px, então o topo só precisa de um respiro depois dele */
+.hero { padding-top: 125px; }
+/* até 1000px o menu fica preso no topo e já ocupa o próprio espaço */
+@media (max-width: 1000px) { .hero { padding-top: 36px; } }
+
+/* ========================= */
+/* CELULAR: PARÁGRAFOS COM CERCA DE 15PX */
+/* ========================= */
+@media (max-width: 700px) {
+  .hero-text > p { font-size: .95rem; line-height: 1.7; }
+  .about-text p, .mvv-header p, .progress-header p, .team-header p, .contact-left > p { font-size: .94rem; line-height: 1.7; }
+  .mvv-card p, .mvv-card li { font-size: .94rem; line-height: 1.6; }
+  .speech-bubble p { font-size: 1rem; }
+  .member p { font-size: .88rem; }
+  .contact-info-item { font-size: .94rem; }
+  .footer-column p, .footer-column a { font-size: .94rem; line-height: 1.8; }
+}
+@media (max-width: 480px) {
+  .member p { font-size: .84rem; }
+}
+
+/* ========================= */
+/* NOSSO PROGRESSO NO CELULAR: LINHAS COMPACTAS (ÍCONE AO LADO DO TÍTULO) */
+/* ========================= */
+@media (max-width: 600px) {
+  .progress-grid { grid-template-columns: 1fr; gap: 12px; }
+  .progress-card { display: flex; align-items: center; gap: 16px; text-align: left; padding: 14px 18px; border-radius: 18px; }
+  .progress-card:hover { transform: none; }
+  .progress-icon { width: 52px; height: 52px; margin: 0; flex: none; border-radius: 14px; }
+  .progress-card h4 { margin: 0; font-size: 1rem; }
+}
