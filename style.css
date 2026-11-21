@@ -1802,8 +1802,6 @@ nav a { font-size: .95rem; }
 /* ========================= */
 /* TOPO SEM ESPAÇO SOBRANDO EMBAIXO DO MENU */
 /* ========================= */
-/* computador: o menu é fixo e tem 90px, então o topo só precisa de um respiro depois dele */
-.hero { padding-top: 125px; }
 /* até 1000px o menu fica preso no topo e já ocupa o próprio espaço */
 @media (max-width: 1000px) { .hero { padding-top: 36px; } }
 
@@ -1845,3 +1843,15 @@ nav a { font-size: .95rem; }
 [data-theme="dark"] .progress-header p, [data-theme="dark"] .team-header p, [data-theme="dark"] .mvv-card p,
 [data-theme="dark"] .mvv-card li, [data-theme="dark"] .member p, [data-theme="dark"] .contact-left > p,
 [data-theme="dark"] .contact-info-item, [data-theme="dark"] .footer-column p, [data-theme="dark"] .mini-card p { color: #fff; }
+
+/* ========================= */
+/* MISSÃO, VISÃO E VALORES NO COMPUTADOR: ÍCONE EM CIMA E TEXTO NA LARGURA TODA DO CARTÃO */
+/* ========================= */
+@media (min-width: 1001px) {
+  .mvv-container { padding: 40px; gap: 28px; align-items: stretch; }
+  .mvv-card { flex-direction: column; align-items: flex-start; gap: 18px; padding: 32px 30px; }
+  .mvv-icon { width: 64px; height: 64px; }
+  .mvv-card h3 { margin-bottom: 12px; line-height: 1.2; }
+  .mvv-card ul { padding-left: 22px; }
+  .mvv-card li { margin-bottom: 2px; }
+}
