@@ -977,13 +977,6 @@ footer {
   overflow: hidden;
   border-top: 1px solid var(--border);
 }
-.footer-wave {
-  position: absolute;
-  width: 120%; height: 160px;
-  background: linear-gradient(90deg, rgba(255,183,210,0.25), rgba(180,222,120,0.25));
-  top: -110px; left: -10%;
-  border-radius: 50%;
-}
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -1568,7 +1561,6 @@ main:focus { outline: none; }
 }
 :root[data-contraste="alto"] .outline-btn { border-color: #FFE14D; color: #FFE14D; }
 :root[data-contraste="alto"] input, :root[data-contraste="alto"] textarea { background: #000; color: #fff; border: 2px solid #fff; }
-:root[data-contraste="alto"] .footer-wave { display: none; }
 :root[data-contraste="alto"] .a11y-abrir { background: #FFE14D; color: #000; }
 :root[data-contraste="alto"] .a11y-op[aria-pressed="true"]::after { background: #FFE14D; }
 
