@@ -1841,3 +1841,15 @@ nav a { font-size: .95rem; }
   .progress-icon { width: 52px; height: 52px; margin: 0; flex: none; border-radius: 14px; }
   .progress-card h4 { margin: 0; font-size: 1rem; }
 }
+
+/* ========================= */
+/* PARÁGRAFOS: PRETO NO MODO CLARO E BRANCO NO MODO ESCURO */
+/* (o balão da Alice continua com texto preto, porque o fundo dele é sempre branco) */
+/* ========================= */
+.hero-text > p, .about-text p, .mvv-header p, .progress-header p, .team-header p,
+.mvv-card p, .mvv-card li, .member p, .contact-left > p, .contact-info-item,
+.footer-column p, .mini-card p { color: #000; }
+[data-theme="dark"] .hero-text > p, [data-theme="dark"] .about-text p, [data-theme="dark"] .mvv-header p,
+[data-theme="dark"] .progress-header p, [data-theme="dark"] .team-header p, [data-theme="dark"] .mvv-card p,
+[data-theme="dark"] .mvv-card li, [data-theme="dark"] .member p, [data-theme="dark"] .contact-left > p,
+[data-theme="dark"] .contact-info-item, [data-theme="dark"] .footer-column p, [data-theme="dark"] .mini-card p { color: #fff; }
